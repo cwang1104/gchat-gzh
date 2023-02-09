@@ -3,8 +3,8 @@ package api
 import (
 	"encoding/xml"
 	"fmt"
-	"gchat-gzh/gzh"
 	"gchat-gzh/pkg/logger"
+	"gchat-gzh/service/ws"
 	"github.com/gin-gonic/gin"
 	"log"
 	"time"
@@ -14,25 +14,25 @@ const (
 	token = "ddsagsddesdxzdf223"
 )
 
-func WxCheckSign(c *gin.Context) {
-	signature := c.Query("signature")
-	timestamp := c.Query("timestamp")
-	nonce := c.Query("nonce")
-	echostr := c.Query("echostr")
-
-	fmt.Println(signature)
-	fmt.Println(timestamp)
-	fmt.Println(nonce)
-	fmt.Println(echostr)
-
-	ok := gzh.CheckSign(signature, timestamp, nonce, token)
-	if !ok {
-		logger.Log.Error("wx api check failed")
-		return
-	}
-	logger.Log.Info("wx api check success")
-	c.Writer.WriteString(echostr)
-}
+//func WxCheckSign(c *gin.Context) {
+//	signature := c.Query("signature")
+//	timestamp := c.Query("timestamp")
+//	nonce := c.Query("nonce")
+//	echostr := c.Query("echostr")
+//
+//	fmt.Println(signature)
+//	fmt.Println(timestamp)
+//	fmt.Println(nonce)
+//	fmt.Println(echostr)
+//
+//	ok := gzh.CheckSign(signature, timestamp, nonce, token)
+//	if !ok {
+//		logger.Log.Error("wx api check failed")
+//		return
+//	}
+//	logger.Log.Info("wx api check success")
+//	c.Writer.WriteString(echostr)
+//}
 
 type WxTextMsg struct {
 	//名字和收到的xml一致，否则无法获取值
@@ -82,4 +82,8 @@ func WxMsgPost(c *gin.Context) {
 	//c.XML(http.StatusOK, gin.H{
 	//	"xml": repText,
 	//})
+}
+
+func MessageAIWs(c *gin.Context) {
+	ws.MsgWsHandler(c.Writer, c.Request)
 }

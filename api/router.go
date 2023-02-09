@@ -8,8 +8,10 @@ func router() *gin.Engine {
 	r := gin.Default()
 	//r.Use(utils.Cors())
 
-	r.GET("/wx", WxCheckSign)
+	//r.GET("/wx", WxCheckSign)
 	r.POST("/wx", WxMsgPost)
+
+	r.GET("/wx/ws", MessageAIWs)
 
 	return r
 }
