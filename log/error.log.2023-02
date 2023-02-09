@@ -1,0 +1,4 @@
+[2023-02-09 11:13:40.743]	[31m[ERROR] [0m	[FilePath] api/api.go:21 	wx api check failed
+[2023-02-09 11:31:04.894]	[31m[ERROR] [0m	[FilePath] api/api.go:21 	wx api check failed
+[2023-02-09 11:33:47.564]	[31m[ERROR] [0m	[FilePath] api/api.go:27 	wx api check failed
+[2023-02-09 11:38:31.917]	[31m[ERROR] [0m	[FilePath] api/api.go:27 	wx api check failed
