@@ -2,6 +2,7 @@ package cgtp
 
 import (
 	"context"
+	"fmt"
 	"gchat-gzh/pkg/logger"
 	gogpt "github.com/sashabaranov/go-gpt3"
 	"time"
@@ -32,6 +33,7 @@ func (c *ChatController) GetMaxToken() int {
 }
 
 func (c *ChatController) GetResponse(prompt string) (resp string, err error) {
+	fmt.Println("收到问题：", prompt)
 	client := gogpt.NewClient(apikey)
 
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
@@ -50,6 +52,6 @@ func (c *ChatController) GetResponse(prompt string) (resp string, err error) {
 		logger.Log.Error("request error", err)
 		return "", err
 	}
-
+	fmt.Printf("接收到问题：%s,\n答案：%s\n", prompt, response.Choices[0].Text)
 	return response.Choices[0].Text, nil
 }

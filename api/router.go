@@ -11,7 +11,8 @@ func router() *gin.Engine {
 	//r.GET("/wx", WxCheckSign)
 	r.POST("/wx", WxMsgPost)
 
-	r.GET("/wx/ws", MessageAIWs)
+	//r.GET("/wx/ws", MessageAIWs)
 
+	r.GET("/ai", MessageAIWs)
 	return r
 }

@@ -6,6 +6,7 @@ import (
 	"gchat-gzh/pkg/logger"
 	"gchat-gzh/service/ws"
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 	"log"
 	"time"
 )
@@ -85,5 +86,5 @@ func WxMsgPost(c *gin.Context) {
 }
 
 func MessageAIWs(c *gin.Context) {
-	ws.MsgWsHandler(c.Writer, c.Request)
+	ws.MsgWsHandler(c.Writer, c.Request, uuid.NewString())
 }

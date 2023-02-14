@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	port = "12369"
+	port = "56000"
 	host = "0.0.0.0"
 )
 

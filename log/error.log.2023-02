@@ -2,3 +2,11 @@
 [2023-02-09 11:31:04.894]	[31m[ERROR] [0m	[FilePath] api/api.go:21 	wx api check failed
 [2023-02-09 11:33:47.564]	[31m[ERROR] [0m	[FilePath] api/api.go:27 	wx api check failed
 [2023-02-09 11:38:31.917]	[31m[ERROR] [0m	[FilePath] api/api.go:27 	wx api check failed
+[2023-02-13 13:40:37.138]	[31m[ERROR] [0m	[FilePath] ws/ws.go:50 	read msg failed,err:websocket: close 1001 (going away)
+[2023-02-13 13:40:51.618]	[31m[ERROR] [0m	[FilePath] ws/ws.go:41 	write msg errorwebsocket: close sent
+[2023-02-13 13:43:23.169]	[31m[ERROR] [0m	[FilePath] ws/ws.go:50 	read msg failed,err:websocket: close 1001 (going away)
+[2023-02-13 13:44:51.675]	[31m[ERROR] [0m	[FilePath] ws/ws.go:41 	write msg errorwebsocket: close sent
+[2023-02-13 13:45:47.269]	[31m[ERROR] [0m	[FilePath] ws/ws.go:50 	read msg failed,err:websocket: close 1001 (going away)
+[2023-02-13 13:47:42.770]	[31m[ERROR] [0m	[FilePath] ws/ws.go:50 	read msg failed,err:websocket: close 1001 (going away)
+[2023-02-13 13:48:39.558]	[31m[ERROR] [0m	[FilePath] ws/ws.go:41 	write msg errorwebsocket: close sent
+[2023-02-13 13:48:54.735]	[31m[ERROR] [0m	[FilePath] ws/ws.go:50 	read msg failed,err:websocket: close 1001 (going away)

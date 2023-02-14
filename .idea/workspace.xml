@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d30dc48-c1e8-45ee-ad7e-a4fcff6fbb79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/ws/msg.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/ws/ws.go" afterDir="false" />
+    <list default="true" id="8d30dc48-c1e8-45ee-ad7e-a4fcff6fbb79" name="Changes" comment="feat: check">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cgtp/gtp.go" beforeDir="false" afterPath="$PROJECT_DIR$/cgtp/gtp.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/error.log.2023-02" beforeDir="false" afterPath="$PROJECT_DIR$/log/error.log.2023-02" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/info.log.2023-02" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log.2023-02" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/ws/msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/ws/msg.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/ws/ws.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/ws/ws.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,6 @@
     "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
@@ -53,11 +55,12 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/wangli"
+    "last_opened_file_path": "D:/program/exec/golang/gchat-gzh"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\program\exec\golang\gchat-gzh" />
       <recent name="D:\program\exec\golang\chatGtp-wechat-gzh\pkg\utils" />
       <recent name="D:\program\exec\golang\chatGtp-wechat-gzh\pkg" />
     </key>
@@ -118,6 +121,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: check" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: check" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

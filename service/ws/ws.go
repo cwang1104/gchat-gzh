@@ -4,11 +4,14 @@ import (
 	"gchat-gzh/pkg/logger"
 	"github.com/gorilla/websocket"
 	"net/http"
+	"sync"
 	"time"
 )
 
-var aiChan = make(chan int, 1)
-var msgChan = make(chan string, 10)
+var aiChan = make(chan int, 5)
+var msgChan = make(chan []string, 20)
+var msgChanMap = make(map[string][]string)
+var connMap sync.Map
 
 var wsupgreder = websocket.Upgrader{
 
@@ -19,7 +22,7 @@ var wsupgreder = websocket.Upgrader{
 	},
 }
 
-func MsgWsHandler(w http.ResponseWriter, r *http.Request) {
+func MsgWsHandler(w http.ResponseWriter, r *http.Request, id string) {
 
 	var conn *websocket.Conn
 	conn, err := wsupgreder.Upgrade(w, r, nil)
@@ -28,12 +31,30 @@ func MsgWsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	connMap.Store(id, conn)
 	logger.Log.Infof("ws connect success,start receiving messages... ")
 
+	//go func() {
+	//	for {
+	//		time.Sleep(time.Second * 3)
+	//		msgChanMap[id] <- "ping"
+	//	}
+	//}()
 	//发送消息均为异步发送
 	go func() {
 		for {
-			_ = conn.WriteMessage(websocket.TextMessage, []byte(<-msgChan))
+			msg := <-msgChan
+			iDconn, ok := connMap.Load(msg[0])
+			if ok {
+				cc, oks := iDconn.(*websocket.Conn)
+				if oks {
+					err = cc.WriteMessage(websocket.TextMessage, []byte(msg[1]))
+					if err != nil {
+						logger.Log.Error("write msg error", err)
+						return
+					}
+				}
+			}
 		}
 	}()
 
@@ -45,7 +66,7 @@ func MsgWsHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		aiChan <- 1
 		//消息处理
-		MsgDeal(data)
+		MsgDeal(data, id)
 		<-aiChan
 	}
 }
